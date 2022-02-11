@@ -125,14 +125,10 @@ public class Lab02 {
 		
 		// solving the quadratic formula
 		// this is for -b +
-		double firstPart1 = (-1 * b) + Math.sqrt(Math.pow(b, 2) - (4 * a * c));
-		double secondPart1 = 2 * a;
-		double x1 = firstPart1 / secondPart1;
+		double x1 = ((-1 * b) + Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
 		
 		// this is for -b -
-		double firstPart2 = (-1 * b) - Math.sqrt(Math.pow(b, 2) - (4 * a * c));
-		double secondPart2 = 2 * a;
-		double x2 = firstPart2 / secondPart2;
+		double x2 = ((-1 * b) - Math.sqrt(Math.pow(b, 2) - (4 * a * c))) / (2 * a);
 		
 		
 		// printing both x-intercepts
