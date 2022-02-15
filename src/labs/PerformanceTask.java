@@ -21,33 +21,39 @@ public class PerformanceTask {
 		
 		// variables to store time, x-position, and y-position
 		int timeInSec = 0;
-		double xPos = 0;
-		double yPos = 0;
+		double xPos = 0.0;
+		double yPos = 0.0;	
 		
-		boolean yPosNot0 = true;
+		boolean launch = true;
+		
+		System.out.println("Time: " + timeInSec + "s");
+		System.out.println("    x-pos: " + xPos + "m");
+		System.out.println("    y-pos: " + yPos + "m");
 		
 		
 		// using while to print the projectile's path
-		while (yPosNot0) {
+		while (yPos >= 0) {
 			
-			// 	printing the time
-			System.out.println("Time: " + timeInSec + "s");
+			//Increment time
+			timeInSec++;
 			
-			// calculating x-position and y-position
+			//Calculate new X and Y positions
 			xPos = Math.cos(Math.toRadians(launchAngle)) * timeInSec * launchVelocity;
-			yPos = Math.sin(Math.toRadians(launchAngle)) * timeInSec * launchVelocity - 0.5 * 9.8 * timeInSec;
+			yPos = Math.sin(Math.toRadians(launchAngle)) * timeInSec * launchVelocity - 0.5 * 9.8 * Math.pow(timeInSec, 2);
 			
-			if (yPos != 0) {
-				// printing the calculated x-pos and y-pos
-				System.out.println("    x-pos: " + xPos + "m");
-				System.out.println("    y-pos: " + yPos + "m");
-			}
-			else {
-				yPosNot0 = false;
+			if (yPos < 0) {
+				yPos = 0.0;
 			}
 			
+			//Print new stats (time, location, etc.)
+			System.out.println("Time: " + timeInSec + "s");
+			System.out.println("    x-pos: " + xPos + "m");
+			System.out.println("    y-pos: " + yPos + "m");
+		
 			
-			
+			if (yPos == 0) {
+				yPos = -1;
+			}
 			
 		}
 		
