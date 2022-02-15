@@ -41,6 +41,7 @@ public class PerformanceTask {
 			xPos = Math.cos(Math.toRadians(launchAngle)) * timeInSec * launchVelocity;
 			yPos = Math.sin(Math.toRadians(launchAngle)) * timeInSec * launchVelocity - 0.5 * 9.8 * Math.pow(timeInSec, 2);
 			
+			
 			if (yPos < 0) {
 				yPos = 0.0;
 			}
